@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "factor",
+      "camelcase": "Factor",
+      "scope": "source.factor",
+      "file-types": [
+        ".factor"
+      ],
+      "injection-regex": "^factor$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A tree-sitter grammar for the Factor (https://factorcode.org/) programming language.",
+    "authors": [
+      {
+        "name": "Eric Rochester",
+        "email": "erochest@gmail.com",
+        "url": "https://www.ericrochester.com/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/erochest/tree-sitter-factor"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
