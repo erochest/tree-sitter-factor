@@ -11,7 +11,19 @@ module.exports = grammar({
   name: "factor",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    source_file: $ => repeat($._declaration),
+
+    _declaration: $ => choice(
+      $.definition,
+      $._top_level_form,
+    ),
+
+    definition: $ => "definition_NOT_IMPLEMENTED",
+
+    _top_level_form: $ => choice(
+      $.string
+    ),
+
+    string: $ => /"[^"]*"/,
   }
 });

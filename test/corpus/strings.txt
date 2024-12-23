@@ -1,0 +1,9 @@
+===============
+String Literals
+===============
+
+"This is a Factor string."
+
+---
+
+(source_file (string))

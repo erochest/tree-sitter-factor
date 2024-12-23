@@ -3,8 +3,41 @@
   "name": "factor",
   "rules": {
     "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_declaration"
+      }
+    },
+    "_declaration": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_top_level_form"
+        }
+      ]
+    },
+    "definition": {
       "type": "STRING",
-      "value": "hello"
+      "value": "word_declarations_NOT_IMPLEMENTED"
+    },
+    "_top_level_form": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        }
+      ]
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": "\"[^\"]*\""
     }
   },
   "extras": [
