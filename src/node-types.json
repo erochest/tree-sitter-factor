@@ -10,6 +10,10 @@
         {
           "type": "base10",
           "named": true
+        },
+        {
+          "type": "base16",
+          "named": true
         }
       ]
     }
@@ -55,6 +59,10 @@
   },
   {
     "type": "base10",
+    "named": true
+  },
+  {
+    "type": "base16",
     "named": true
   },
   {

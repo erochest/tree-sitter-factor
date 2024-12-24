@@ -8,6 +8,11 @@ Number Literals
 2,432,902,008,176,640,000
 1_000_000
 
+0x16
+0xfa
+0xFA
+0xFFa7
+
 ---
 
 (source_file
@@ -15,5 +20,9 @@ Number Literals
 	(number (integer (base10)))
 	(number (integer (base10)))
 	(number (integer (base10)))
+	(number (integer (base16)))
+	(number (integer (base16)))
+	(number (integer (base16)))
+	(number (integer (base16)))
 )
 
