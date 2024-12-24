@@ -24,7 +24,7 @@
     },
     "definition": {
       "type": "STRING",
-      "value": "word_declarations_NOT_IMPLEMENTED"
+      "value": "definition_NOT_IMPLEMENTED"
     },
     "_top_level_form": {
       "type": "CHOICE",
@@ -32,12 +32,38 @@
         {
           "type": "SYMBOL",
           "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
         }
       ]
     },
     "string": {
       "type": "PATTERN",
       "value": "\"[^\"]*\""
+    },
+    "number": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        }
+      ]
+    },
+    "integer": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "base10"
+        }
+      ]
+    },
+    "base10": {
+      "type": "PATTERN",
+      "value": "-?(\\d+|\\d{1,3}([,_]\\d{3})+)"
     }
   },
   "extras": [

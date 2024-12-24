@@ -21,9 +21,23 @@ module.exports = grammar({
     definition: $ => "definition_NOT_IMPLEMENTED",
 
     _top_level_form: $ => choice(
-      $.string
-    ),
+      $.string,
+      $.number
+  ),
 
     string: $ => /"[^"]*"/,
+
+    number: $ => choice(
+      $.integer,
+    ),
+
+    integer: $ => choice(
+      $.base10,
+      // $.base16,
+      // $.base08,
+      // $.base02,
+    ),
+    
+    base10: $ => /-?(\d+|\d{1,3}([,_]\d{3})+)/,
   }
 });

@@ -1,0 +1,19 @@
+
+===============
+Number Literals
+===============
+
+123456
+-10
+2,432,902,008,176,640,000
+1_000_000
+
+---
+
+(source_file
+	(number (integer (base10)))
+	(number (integer (base10)))
+	(number (integer (base10)))
+	(number (integer (base10)))
+)
+
