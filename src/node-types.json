@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "base08",
+          "named": true
+        },
+        {
           "type": "base10",
           "named": true
         },
@@ -56,6 +60,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "base08",
+    "named": true
   },
   {
     "type": "base10",

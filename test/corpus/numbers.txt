@@ -1,12 +1,25 @@
 
-===============
-Number Literals
-===============
+================
+Base 10 Integers
+================
 
 123456
 -10
 2,432,902,008,176,640,000
 1_000_000
+
+---
+
+(source_file
+	(number (integer (base10)))
+	(number (integer (base10)))
+	(number (integer (base10)))
+	(number (integer (base10)))
+)
+
+================
+Base 16 Integers
+================
 
 0x16
 0xfa
@@ -16,13 +29,23 @@ Number Literals
 ---
 
 (source_file
-	(number (integer (base10)))
-	(number (integer (base10)))
-	(number (integer (base10)))
-	(number (integer (base10)))
 	(number (integer (base16)))
 	(number (integer (base16)))
 	(number (integer (base16)))
 	(number (integer (base16)))
+)
+
+================
+Base 08 Integers
+================
+
+0o77
+0o01
+
+---
+
+(source_file
+	(number (integer (base08)))
+	(number (integer (base08)))
 )
 
