@@ -49,3 +49,17 @@ Base 08 Integers
 	(number (integer (base08)))
 )
 
+================
+Base 02 Integers
+================
+
+0b11
+0B01
+
+---
+
+(source_file
+	(number (integer (base02)))
+	(number (integer (base02)))
+)
+
