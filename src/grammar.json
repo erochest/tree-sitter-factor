@@ -48,6 +48,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "float"
+        },
+        {
+          "type": "SYMBOL",
           "name": "ratio"
         },
         {
@@ -56,9 +60,51 @@
         }
       ]
     },
+    "float": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[-+]?(\\d+[-+])?\\d+\\/\\d+\\."
+        },
+        {
+          "type": "PATTERN",
+          "value": "[-+]?\\d+(\\.\\d+)?[eE][-+]?\\d+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[-+]?\\d+\\.\\d*"
+        }
+      ]
+    },
+    "_exp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[eE]"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_sign"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_b10"
+        }
+      ]
+    },
     "ratio": {
       "type": "PATTERN",
-      "value": "[-+]?((\\d+|\\d{1,3}([,_]\\d{3})+)[-+])?(\\d+|\\d{1,3}([,_]\\d{3})+)\\/(\\d+|\\d{1,3}([,_]\\d{3})+)"
+      "value": "[-+]?(\\d+[-+])?\\d+\\/\\d+"
     },
     "integer": {
       "type": "CHOICE",
@@ -81,9 +127,26 @@
         }
       ]
     },
+    "_sign": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        }
+      ]
+    },
     "base10": {
       "type": "PATTERN",
       "value": "[-+]?(\\d+|\\d{1,3}([,_]\\d{3})+)"
+    },
+    "_b10": {
+      "type": "PATTERN",
+      "value": "(\\d+|\\d{1,3}([,_]\\d{3})+)"
     },
     "base16": {
       "type": "PATTERN",

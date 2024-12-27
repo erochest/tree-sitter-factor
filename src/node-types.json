@@ -1,5 +1,10 @@
 [
   {
+    "type": "float",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "integer",
     "named": true,
     "fields": {},
@@ -34,6 +39,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "float",
+          "named": true
+        },
         {
           "type": "integer",
           "named": true
