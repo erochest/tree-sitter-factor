@@ -37,6 +37,10 @@
         {
           "type": "integer",
           "named": true
+        },
+        {
+          "type": "ratio",
+          "named": true
         }
       ]
     }
@@ -83,6 +87,10 @@
   },
   {
     "type": "definition",
+    "named": true
+  },
+  {
+    "type": "ratio",
     "named": true
   },
   {

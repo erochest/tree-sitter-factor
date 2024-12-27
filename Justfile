@@ -5,3 +5,6 @@ test: generate
 generate:
   tree-sitter generate
 
+playground:
+  tree-sitter build --wasm
+  tree-sitter playground
