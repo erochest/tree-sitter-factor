@@ -1,3 +1,5 @@
-((string) @string)
+(string) @string
 
-((number) @number)
+(number) @number
+
+(ERROR) @error-node
