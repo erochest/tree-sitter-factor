@@ -14,7 +14,9 @@ const UNARY_POSTFIX = [
 const CHAR_PREFIX = "CHAR:"
 const QUOTE_START = "["
 const QUOTE_END = "]"
+
 const ARRAY_START = "{"
+const BYTE_ARRAY_START = "B{"
 const COMPLEX_START = "C{"
 const ARRAY_END = "}"
 
@@ -37,6 +39,7 @@ module.exports = grammar({
       $.unary_postfix,
       $.quote,
       $.array,
+      $.byte_array,
       $.complex,
     ),
 
@@ -97,6 +100,7 @@ module.exports = grammar({
     quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
 
     array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
+    byte_array: $ => seq(BYTE_ARRAY_START, repeat($.number), ARRAY_END),
 
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
   }

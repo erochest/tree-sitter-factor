@@ -51,6 +51,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "byte_array"
+        },
+        {
+          "type": "SYMBOL",
           "name": "complex"
         }
       ]
@@ -332,6 +336,26 @@
           "content": {
             "type": "SYMBOL",
             "name": "_top_level_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "byte_array": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "B{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number"
           }
         },
         {

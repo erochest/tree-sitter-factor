@@ -30,3 +30,21 @@ C{ 0 1 }
 	(complex (number (ratio)) (number (ratio)))
 	(complex (number (integer (base10))) (number (integer (base10))))
 )
+
+===========
+Byte Arrays
+===========
+
+B{ }
+B{ 1 2 3 }
+
+---
+
+(source_file
+	(byte_array)
+	(byte_array
+		(number (integer (base10)))
+		(number (integer (base10)))
+		(number (integer (base10)))
+	)
+)

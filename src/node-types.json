@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "byte_array",
+          "named": true
+        },
+        {
           "type": "complex",
           "named": true
         },
@@ -29,6 +33,21 @@
         },
         {
           "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "byte_array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -140,6 +159,10 @@
           "named": true
         },
         {
+          "type": "byte_array",
+          "named": true
+        },
+        {
           "type": "complex",
           "named": true
         },
@@ -173,6 +196,10 @@
       "types": [
         {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "byte_array",
           "named": true
         },
         {
@@ -239,6 +266,10 @@
     "type": "unicode_name",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "B{",
+    "named": false
   },
   {
     "type": "CHAR:",
