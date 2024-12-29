@@ -31,6 +31,7 @@ module.exports = grammar({
       $.string,
       $.number,
       $.unary_postfix,
+      $.quote,
     ),
 
     string: $ => /"[^"]*"/,
@@ -69,5 +70,7 @@ module.exports = grammar({
     unary_op: $ => choice(...UNARY_POSTFIX),
 
     word: $ => /\S+/,
+
+    quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
   }
 });

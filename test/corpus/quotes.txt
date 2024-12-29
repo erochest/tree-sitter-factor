@@ -1,0 +1,22 @@
+
+======
+Quotes
+======
+
+[ ] 
+
+[ "a string" ]
+[ "another string" 3.141589 1/2 [ \ word ] ]
+
+---
+
+(source_file
+	(quote)
+	(quote (string))
+	(quote
+		(string)
+		(number (float))
+		(number (ratio))
+		(quote (unary_postfix (unary_op) (word)))
+	)
+)

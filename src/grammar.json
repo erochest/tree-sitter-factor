@@ -40,6 +40,10 @@
         {
           "type": "SYMBOL",
           "name": "unary_postfix"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "quote"
         }
       ]
     },
@@ -193,6 +197,26 @@
     "word": {
       "type": "PATTERN",
       "value": "\\S+"
+    },
+    "quote": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_top_level_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
     }
   },
   "extras": [
