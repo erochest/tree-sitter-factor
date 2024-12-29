@@ -13,6 +13,8 @@ const UNARY_POSTFIX = [
 ]
 const QUOTE_START = "["
 const QUOTE_END = "]"
+const ARRAY_START = "{"
+const ARRAY_END = "}"
 
 module.exports = grammar({
   name: "factor",
@@ -32,6 +34,7 @@ module.exports = grammar({
       $.number,
       $.unary_postfix,
       $.quote,
+      $.array,
     ),
 
     string: $ => /"[^"]*"/,
@@ -72,5 +75,7 @@ module.exports = grammar({
     word: $ => /\S+/,
 
     quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
+
+    array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
   }
 });
