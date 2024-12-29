@@ -7,13 +7,20 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const UNARY_POSTFIX = [
+  "\\",
+  "POSTPONE:",
+]
+const QUOTE_START = "["
+const QUOTE_END = "]"
+
 module.exports = grammar({
   name: "factor",
 
   rules: {
     source_file: $ => repeat($._declaration),
 
-    _declaration: $ => choice(
+   _declaration: $ => choice(
       $.definition,
       $._top_level_form,
     ),
@@ -22,7 +29,8 @@ module.exports = grammar({
 
     _top_level_form: $ => choice(
       $.string,
-      $.number
+      $.number,
+      $.unary_postfix,
     ),
 
     string: $ => /"[^"]*"/,
@@ -56,5 +64,10 @@ module.exports = grammar({
     base16: $ => /[-+]?0[xX]([\da-fA-F]+|[\da-fA-F]{1,3}([,_][\da-fA-F]{3})+)/,
     base08: $ => /[-+]?0[oO]([0-7]+|[0-7]{1,3}([,_][0-7]{3})+)/,
     base02: $ => /[-+]?0[bB]([01]+|[01]{1,3}([,_][01]{3})+)/,
+
+    unary_postfix: $ => seq($.unary_op, $.word),
+    unary_op: $ => choice(...UNARY_POSTFIX),
+
+    word: $ => /\S+/,
   }
 });

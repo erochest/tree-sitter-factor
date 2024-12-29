@@ -74,9 +74,45 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "unary_op",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "unary_postfix",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "unary_op",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "POSTPONE:",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
   },
   {
     "type": "base02",
@@ -104,6 +140,10 @@
   },
   {
     "type": "string",
+    "named": true
+  },
+  {
+    "type": "word",
     "named": true
   }
 ]
