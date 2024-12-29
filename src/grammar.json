@@ -177,15 +177,33 @@
       "value": "[-+]?0[bB]([01]+|[01]{1,3}([,_][01]{3})+)"
     },
     "unary_postfix": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "unary_op"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "unary_op"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "word"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "word"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "CHAR:"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "char"
+            }
+          ]
         }
       ]
     },
@@ -205,6 +223,82 @@
     "word": {
       "type": "PATTERN",
       "value": "\\S+"
+    },
+    "char": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\S"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\\\[\\\\stnrbvf0e\"]"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unicode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unicode_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "octcode"
+        }
+      ]
+    },
+    "unicode": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\\\[xX][\\da-fA-F]{2}"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\\\[uU][\\da-fA-F]{6}"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\\\[uU]\\{"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[\\da-fA-F]+"
+            },
+            {
+              "type": "STRING",
+              "value": "}"
+            }
+          ]
+        }
+      ]
+    },
+    "unicode_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\\\[uU]\\{"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^}]+"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "octcode": {
+      "type": "PATTERN",
+      "value": "\\\\[0-7]{1,3}"
     },
     "quote": {
       "type": "SEQ",

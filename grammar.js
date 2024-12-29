@@ -11,6 +11,7 @@ const UNARY_POSTFIX = [
   "\\",
   "POSTPONE:",
 ]
+const CHAR_PREFIX = "CHAR:"
 const QUOTE_START = "["
 const QUOTE_END = "]"
 const ARRAY_START = "{"
@@ -71,10 +72,27 @@ module.exports = grammar({
     base08: $ => /[-+]?0[oO]([0-7]+|[0-7]{1,3}([,_][0-7]{3})+)/,
     base02: $ => /[-+]?0[bB]([01]+|[01]{1,3}([,_][01]{3})+)/,
 
-    unary_postfix: $ => seq($.unary_op, $.word),
+    unary_postfix: $ => choice(
+      seq($.unary_op, $.word),
+      seq(CHAR_PREFIX, $.char),
+    ),
     unary_op: $ => choice(...UNARY_POSTFIX),
 
     word: $ => /\S+/,
+    char: $ => choice(
+      /\S/,
+      /\\[\\stnrbvf0e"]/,
+      $.unicode,
+      $.unicode_name,
+      $.octcode,
+    ),
+    unicode: $ => choice(
+      /\\[xX][\da-fA-F]{2}/,
+      /\\[uU][\da-fA-F]{6}/,
+      seq(/\\[uU]\{/, /[\da-fA-F]+/, "}"),
+    ),
+    unicode_name: $ => seq(/\\[uU]\{/, /[^}]+/, "}"),
+    octcode: $ => /\\[0-7]{1,3}/,
 
     quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
 

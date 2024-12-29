@@ -13,3 +13,51 @@ POSTPONE: another-word
 	(unary_postfix (unary_op) (word))
 )
 
+==========
+Characters
+==========
+
+CHAR: a
+
+CHAR: \\
+CHAR: \s
+CHAR: \t
+CHAR: \n
+CHAR: \r
+CHAR: \b
+CHAR: \v
+CHAR: \f
+CHAR: \0
+CHAR: \e
+CHAR: \"
+CHAR: \xf7
+CHAR: \uf70800
+CHAR: \u{0d}
+CHAR: \u{LATIN SMALL LETTER SCHWA}
+CHAR: \6
+CHAR: \65
+CHAR: \124
+ 
+---
+
+(source_file
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char))
+	(unary_postfix (char (unicode)))
+	(unary_postfix (char (unicode)))
+	(unary_postfix (char (unicode)))
+	(unary_postfix (char (unicode_name)))
+	(unary_postfix (char (octcode)))
+	(unary_postfix (char (octcode)))
+	(unary_postfix (char (octcode)))
+)
