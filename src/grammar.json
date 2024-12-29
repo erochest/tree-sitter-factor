@@ -48,6 +48,10 @@
         {
           "type": "SYMBOL",
           "name": "array"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "complex"
         }
       ]
     },
@@ -235,6 +239,27 @@
             "type": "SYMBOL",
             "name": "_top_level_form"
           }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "complex": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "C{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
         },
         {
           "type": "STRING",

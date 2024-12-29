@@ -16,3 +16,17 @@ Arrays
 	(array (number (integer (base10))) (number (integer (base10))))
 	(array (string) (number (integer (base10))))
 )
+
+===============
+Complex Numbers
+===============
+
+C{ 1/2 1/3 }
+C{ 0 1 }
+
+---
+
+(source_file
+	(complex (number (ratio)) (number (ratio)))
+	(complex (number (integer (base10))) (number (integer (base10))))
+)
