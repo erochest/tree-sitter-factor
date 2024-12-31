@@ -11,10 +11,10 @@ Arrays
 ---
 
 (source_file
-	(array)
-	(array (number (integer (base10))))
-	(array (number (integer (base10))) (number (integer (base10))))
-	(array (string) (number (integer (base10))))
+	(collection (array))
+	(collection (array (number (integer (base10)))))
+	(collection (array (number (integer (base10))) (number (integer (base10)))))
+	(collection (array (string) (number (integer (base10)))))
 )
 
 ===============
@@ -27,8 +27,8 @@ C{ 0 1 }
 ---
 
 (source_file
-	(complex (number (ratio)) (number (ratio)))
-	(complex (number (integer (base10))) (number (integer (base10))))
+	(collection (complex (number (ratio)) (number (ratio))))
+	(collection (complex (number (integer (base10))) (number (integer (base10)))))
 )
 
 ===========
@@ -41,10 +41,10 @@ B{ 1 2 3 }
 ---
 
 (source_file
-	(byte_array)
-	(byte_array
-		(number (integer (base10)))
-		(number (integer (base10)))
-		(number (integer (base10)))
-	)
+	(collection (byte_array))
+	(collection (byte_array
+		(integer (base10))
+		(integer (base10))
+		(integer (base10))
+	))
 )

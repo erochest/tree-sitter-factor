@@ -47,15 +47,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "array"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "byte_array"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "complex"
+          "name": "collection"
         }
       ]
     },
@@ -324,6 +316,23 @@
         }
       ]
     },
+    "collection": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "array"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "byte_array"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "complex"
+        }
+      ]
+    },
     "array": {
       "type": "SEQ",
       "members": [
@@ -355,7 +364,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "number"
+            "name": "integer"
           }
         },
         {

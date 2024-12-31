@@ -38,9 +38,7 @@ module.exports = grammar({
       $.number,
       $.unary_postfix,
       $.quote,
-      $.array,
-      $.byte_array,
-      $.complex,
+      $.collection,
     ),
 
     string: $ => /"[^"]*"/,
@@ -99,9 +97,14 @@ module.exports = grammar({
 
     quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
 
-    array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
-    byte_array: $ => seq(BYTE_ARRAY_START, repeat($.number), ARRAY_END),
+    collection: $ => choice(
+      $.array,
+      $.byte_array,
+      $.complex,
+    ),
 
+    array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
+    byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
   }
 });
