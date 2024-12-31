@@ -48,3 +48,17 @@ B{ 1 2 3 }
 		(integer (base10))
 	))
 )
+
+=======
+Vectors
+=======
+
+V{ }
+V{ "some" "stuff" "here" 42+1/2 }
+
+---
+
+(source_file
+	(collection (vector))
+	(collection (vector (string) (string) (string) (number (ratio))))
+)

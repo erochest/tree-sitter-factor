@@ -87,6 +87,10 @@
         {
           "type": "complex",
           "named": true
+        },
+        {
+          "type": "vector",
+          "named": true
         }
       ]
     }
@@ -267,6 +271,37 @@
     "fields": {}
   },
   {
+    "type": "vector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "B{",
     "named": false
   },
@@ -280,6 +315,10 @@
   },
   {
     "type": "POSTPONE:",
+    "named": false
+  },
+  {
+    "type": "V{",
     "named": false
   },
   {

@@ -18,6 +18,7 @@ const QUOTE_END = "]"
 const ARRAY_START = "{"
 const BYTE_ARRAY_START = "B{"
 const COMPLEX_START = "C{"
+const VECTOR_START = "V{"
 const ARRAY_END = "}"
 
 module.exports = grammar({
@@ -101,10 +102,12 @@ module.exports = grammar({
       $.array,
       $.byte_array,
       $.complex,
+      $.vector,
     ),
 
     array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
     byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
+    vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
   }
 });
