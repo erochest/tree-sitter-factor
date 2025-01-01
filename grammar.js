@@ -44,6 +44,7 @@ module.exports = grammar({
       $.unary_postfix,
       $.quote,
       $.collection,
+      $.tuple,
     ),
 
     string: $ => /"(\\\"|[^"])*"/,
@@ -121,5 +122,26 @@ module.exports = grammar({
     id_hashtable: $ => seq(ID_HASHTABLE_START, repeat($.array), ARRAY_END),
     string_buffer: $ => seq(STRING_BUFFER_START, /(\\\"|[^"])*"/),
     vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
-  }
+
+    tuple: $ => seq(
+      "T{",
+      $.symbol,
+      optional(
+        choice(
+          seq($.f, repeat($._top_level_form)),
+          repeat($.property_pair),
+        ),
+      ),
+      "}",
+    ),
+
+    symbol: $ => /[^"]\S*/,
+    f: $ => "f",
+    property_pair: $ => seq(
+      ARRAY_START,
+      $.symbol,
+      $._top_level_form,
+      ARRAY_END,
+    ),
+  },
 });

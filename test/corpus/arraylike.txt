@@ -97,3 +97,30 @@ HS{ 4 2 42 }
 					(number (integer (base10))) 
 					(number (integer (base10))) 
 					(number (integer (base10))))))
+
+======
+Tuples
+======
+
+
+T{ class }
+T{ class f 4 17 "name" "description" 0xfa }
+T{ class { id 4 } { iteration 17 } { name "name" }
+		 { description "description" } { code 0xfa } }
+
+---
+
+(source_file
+	(tuple (symbol))
+	(tuple (symbol) (f) (number (integer (base10)))
+			    (number (integer (base10)))
+				(string) (string)
+				(number (integer (base16))))
+	(tuple (symbol)
+		(property_pair (symbol) (number (integer (base10))))
+		(property_pair (symbol) (number (integer (base10))))
+		(property_pair (symbol) (string))
+		(property_pair (symbol) (string))
+		(property_pair (symbol) (number (integer (base16))))
+	)
+)

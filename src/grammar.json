@@ -48,6 +48,10 @@
         {
           "type": "SYMBOL",
           "name": "collection"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tuple"
         }
       ]
     },
@@ -500,6 +504,88 @@
             "type": "SYMBOL",
             "name": "_top_level_form"
           }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "tuple": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "T{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "f"
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_top_level_form"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "property_pair"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "symbol": {
+      "type": "PATTERN",
+      "value": "[^\"]\\S*"
+    },
+    "f": {
+      "type": "STRING",
+      "value": "f"
+    },
+    "property_pair": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_top_level_form"
         },
         {
           "type": "STRING",

@@ -24,6 +24,10 @@
           "named": true
         },
         {
+          "type": "tuple",
+          "named": true
+        },
+        {
           "type": "unary_postfix",
           "named": true
         }
@@ -156,6 +160,10 @@
           "named": true
         },
         {
+          "type": "tuple",
+          "named": true
+        },
+        {
           "type": "unary_postfix",
           "named": true
         }
@@ -243,6 +251,45 @@
     }
   },
   {
+    "type": "property_pair",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "quote",
     "named": true,
     "fields": {},
@@ -264,6 +311,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         },
         {
@@ -303,6 +354,10 @@
           "named": true
         },
         {
+          "type": "tuple",
+          "named": true
+        },
+        {
           "type": "unary_postfix",
           "named": true
         }
@@ -313,6 +368,53 @@
     "type": "string_buffer",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "tuple",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "f",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "property_pair",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "unary_op",
@@ -377,6 +479,10 @@
           "named": true
         },
         {
+          "type": "tuple",
+          "named": true
+        },
+        {
           "type": "unary_postfix",
           "named": true
         }
@@ -416,6 +522,10 @@
     "named": false
   },
   {
+    "type": "T{",
+    "named": false
+  },
+  {
     "type": "V{",
     "named": false
   },
@@ -452,6 +562,10 @@
     "named": true
   },
   {
+    "type": "f",
+    "named": true
+  },
+  {
     "type": "octcode",
     "named": true
   },
@@ -461,6 +575,10 @@
   },
   {
     "type": "string",
+    "named": true
+  },
+  {
+    "type": "symbol",
     "named": true
   },
   {
