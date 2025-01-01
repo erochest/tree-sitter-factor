@@ -62,3 +62,23 @@ V{ "some" "stuff" "here" 42+1/2 }
 	(collection (vector))
 	(collection (vector (string) (string) (string) (number (ratio))))
 )
+
+==========
+Hashtables
+==========
+
+H{ }
+
+IH{ }
+
+H{ { 1 2 } { 3 4 } }
+
+---
+
+(source_file
+	(collection (hashtable))
+	(collection (id_hashtable))
+	(collection (hashtable
+		(array (number (integer (base10))) (number (integer (base10))))
+		(array (number (integer (base10))) (number (integer (base10)))))))
+

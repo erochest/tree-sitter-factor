@@ -333,11 +333,19 @@
         },
         {
           "type": "SYMBOL",
-          "name": "vector"
+          "name": "hashtable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id_hashtable"
         },
         {
           "type": "SYMBOL",
           "name": "string_buffer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vector"
         }
       ]
     },
@@ -402,18 +410,38 @@
         }
       ]
     },
-    "vector": {
+    "hashtable": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "V{"
+          "value": "H{"
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_top_level_form"
+            "name": "array"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "id_hashtable": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "IH{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "array"
           }
         },
         {
@@ -432,6 +460,26 @@
         {
           "type": "PATTERN",
           "value": "(\\\\\\\"|[^\"])*\""
+        }
+      ]
+    },
+    "vector": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "V{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_top_level_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     }

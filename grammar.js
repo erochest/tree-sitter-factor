@@ -18,6 +18,8 @@ const QUOTE_END = "]"
 const ARRAY_START = "{"
 const BYTE_ARRAY_START = "B{"
 const COMPLEX_START = "C{"
+const HASHTABLE_START = "H{"
+const ID_HASHTABLE_START = "IH{"
 const VECTOR_START = "V{"
 const ARRAY_END = "}"
 const STRING_BUFFER_START = "SBUF\""
@@ -103,14 +105,18 @@ module.exports = grammar({
       $.array,
       $.byte_array,
       $.complex,
-      $.vector,
+      $.hashtable,
+      $.id_hashtable,
       $.string_buffer,
+      $.vector,
     ),
 
     array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
     byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
-    vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
+    hashtable: $ => seq(HASHTABLE_START, repeat($.array), ARRAY_END),
+    id_hashtable: $ => seq(ID_HASHTABLE_START, repeat($.array), ARRAY_END),
     string_buffer: $ => seq(STRING_BUFFER_START, /(\\\"|[^"])*"/),
+    vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
   }
 });

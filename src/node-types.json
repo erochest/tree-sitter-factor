@@ -89,6 +89,14 @@
           "named": true
         },
         {
+          "type": "hashtable",
+          "named": true
+        },
+        {
+          "type": "id_hashtable",
+          "named": true
+        },
+        {
           "type": "string_buffer",
           "named": true
         },
@@ -118,6 +126,36 @@
     "type": "float",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "hashtable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "id_hashtable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "integer",
@@ -320,6 +358,14 @@
   },
   {
     "type": "C{",
+    "named": false
+  },
+  {
+    "type": "H{",
+    "named": false
+  },
+  {
+    "type": "IH{",
     "named": false
   },
   {
