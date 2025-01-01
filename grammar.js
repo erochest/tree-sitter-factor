@@ -43,7 +43,7 @@ module.exports = grammar({
       $.collection,
     ),
 
-    string: $ => /"[^"]*"/,
+    string: $ => /"(\\\"|[^"])*"/,
 
     number: $ => choice(
       $.float,
@@ -111,6 +111,6 @@ module.exports = grammar({
     byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
     vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
-    string_buffer: $ => seq(STRING_BUFFER_START, /[^"]*"/),
+    string_buffer: $ => seq(STRING_BUFFER_START, /(\\\"|[^"])*"/),
   }
 });

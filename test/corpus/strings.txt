@@ -3,10 +3,14 @@ String Literals
 ===============
 
 "This is a Factor string."
+"This string contains \"quotes\"."
 
 ---
 
-(source_file (string))
+(source_file 
+	(string)
+	(string)
+)
 
 ==============
 String Buffers
@@ -14,10 +18,12 @@ String Buffers
 
 SBUF" "
 SBUF" something something something"
+SBUF" this string contains \"quotes\"."
 
 ---
 
 (source_file
+	(collection (string_buffer))
 	(collection (string_buffer))
 	(collection (string_buffer))
 )

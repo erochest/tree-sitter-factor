@@ -53,7 +53,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\"[^\"]*\""
+      "value": "\"(\\\\\\\"|[^\"])*\""
     },
     "number": {
       "type": "CHOICE",
@@ -431,7 +431,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^\"]*\""
+          "value": "(\\\\\\\"|[^\"])*\""
         }
       ]
     }
