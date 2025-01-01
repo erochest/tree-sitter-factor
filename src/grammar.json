@@ -334,6 +334,10 @@
         {
           "type": "SYMBOL",
           "name": "vector"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_buffer"
         }
       ]
     },
@@ -415,6 +419,19 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "string_buffer": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "SBUF\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\"]*\""
         }
       ]
     }

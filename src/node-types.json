@@ -89,6 +89,10 @@
           "named": true
         },
         {
+          "type": "string_buffer",
+          "named": true
+        },
+        {
           "type": "vector",
           "named": true
         }
@@ -233,6 +237,11 @@
     }
   },
   {
+    "type": "string_buffer",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "unary_op",
     "named": true,
     "fields": {}
@@ -315,6 +324,10 @@
   },
   {
     "type": "POSTPONE:",
+    "named": false
+  },
+  {
+    "type": "SBUF\"",
     "named": false
   },
   {

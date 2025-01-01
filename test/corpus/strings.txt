@@ -7,3 +7,17 @@ String Literals
 ---
 
 (source_file (string))
+
+==============
+String Buffers
+==============
+
+SBUF" "
+SBUF" something something something"
+
+---
+
+(source_file
+	(collection (string_buffer))
+	(collection (string_buffer))
+)
