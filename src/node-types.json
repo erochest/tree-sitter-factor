@@ -89,6 +89,10 @@
           "named": true
         },
         {
+          "type": "hashset",
+          "named": true
+        },
+        {
           "type": "hashtable",
           "named": true
         },
@@ -126,6 +130,37 @@
     "type": "float",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "hashset",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "hashtable",
@@ -358,6 +393,10 @@
   },
   {
     "type": "C{",
+    "named": false
+  },
+  {
+    "type": "HS{",
     "named": false
   },
   {

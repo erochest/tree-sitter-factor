@@ -82,3 +82,18 @@ H{ { 1 2 } { 3 4 } }
 		(array (number (integer (base10))) (number (integer (base10))))
 		(array (number (integer (base10))) (number (integer (base10)))))))
 
+========
+Hash Set
+========
+
+HS{ }
+HS{ 4 2 42 }
+
+---
+
+(source_file
+	(collection (hashset))
+	(collection (hashset
+					(number (integer (base10))) 
+					(number (integer (base10))) 
+					(number (integer (base10))))))
