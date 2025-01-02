@@ -27,3 +27,19 @@ SBUF" this string contains \"quotes\"."
 	(collection (string_buffer))
 	(collection (string_buffer))
 )
+
+=========
+Pathnames
+=========
+
+P" in-a-directory/a-pathname.ext"
+P" more.txt"
+P" README.md"
+
+---
+
+(source_file
+	(collection (pathname))
+	(collection (pathname))
+	(collection (pathname))
+)

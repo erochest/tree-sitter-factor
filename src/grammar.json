@@ -349,6 +349,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "pathname"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string_buffer"
         },
         {
@@ -475,6 +479,19 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "pathname": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "P\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "(\\\\\\\"|[^\"])*\""
         }
       ]
     },

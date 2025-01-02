@@ -105,6 +105,10 @@
           "named": true
         },
         {
+          "type": "pathname",
+          "named": true
+        },
+        {
           "type": "string_buffer",
           "named": true
         },
@@ -249,6 +253,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "pathname",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "property_pair",
@@ -511,6 +520,10 @@
   },
   {
     "type": "IH{",
+    "named": false
+  },
+  {
+    "type": "P\"",
     "named": false
   },
   {

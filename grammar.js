@@ -23,6 +23,8 @@ const HASHTABLE_START = "H{"
 const ID_HASHTABLE_START = "IH{"
 const VECTOR_START = "V{"
 const ARRAY_END = "}"
+
+const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
 
 module.exports = grammar({
@@ -110,6 +112,7 @@ module.exports = grammar({
       $.hashset,
       $.hashtable,
       $.id_hashtable,
+      $.pathname,
       $.string_buffer,
       $.vector,
     ),
@@ -120,6 +123,7 @@ module.exports = grammar({
     hashset: $ => seq(HASHSET_START, repeat($._top_level_form), ARRAY_END),
     hashtable: $ => seq(HASHTABLE_START, repeat($.array), ARRAY_END),
     id_hashtable: $ => seq(ID_HASHTABLE_START, repeat($.array), ARRAY_END),
+    pathname: $ => seq(PATHNAME_START, /(\\\"|[^"])*"/),
     string_buffer: $ => seq(STRING_BUFFER_START, /(\\\"|[^"])*"/),
     vector: $ => seq(VECTOR_START, repeat($._top_level_form), ARRAY_END),
 
