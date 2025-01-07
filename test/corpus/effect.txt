@@ -1,0 +1,48 @@
+
+=====
+Basic
+=====
+
+( inputs -- outputs )
+( x y -- z )
+( seq elt -- )
+
+---
+
+(source_file
+	(effect (inputs (symbol)) (outputs (symbol)))
+	(effect (inputs (symbol) (symbol)) (outputs (symbol)))
+	(effect (inputs (symbol) (symbol)))
+)
+
+===========================
+Row-Polymorphic Combinators
+===========================
+
+
+( ..a pred: ( ..a -- ..b ? ) body: ( ..b -- ..a ) -- ..b )
+
+( ..a ? true: ( ..a ? -- ..b ) false: ( ..a -- ..b ) -- ..b )
+
+( ... seq quot: ( ... x -- ... ) -- ... )
+
+---
+
+(source_file
+	(effect 
+		(inputs 
+			(symbol) 
+			(symbol) (effect (inputs (symbol)) (outputs (symbol) (symbol)))
+			(symbol) (effect (inputs (symbol)) (outputs (symbol))))
+		(outputs (symbol)))
+	(effect
+		(inputs
+			(symbol) (symbol)
+			(symbol) (effect (inputs (symbol) (symbol)) (outputs (symbol)))
+			(symbol) (effect (inputs (symbol)) (outputs (symbol))))
+		(outputs (symbol)))
+	(effect
+		(inputs (symbol) (symbol)
+			(symbol) (effect (inputs (symbol) (symbol)) (outputs (symbol))))
+		(outputs (symbol)))
+)

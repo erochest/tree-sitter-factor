@@ -52,6 +52,10 @@
         {
           "type": "SYMBOL",
           "name": "tuple"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "effect"
         }
       ]
     },
@@ -583,7 +587,7 @@
     },
     "symbol": {
       "type": "PATTERN",
-      "value": "[^\"]\\S*"
+      "value": "[^\"(\"]\\S*"
     },
     "f": {
       "type": "STRING",
@@ -609,6 +613,99 @@
           "value": "}"
         }
       ]
+    },
+    "effect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "input",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "inputs"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "--"
+        },
+        {
+          "type": "FIELD",
+          "name": "output",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "outputs"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "inputs": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_effect_item"
+      }
+    },
+    "outputs": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_effect_item"
+      }
+    },
+    "_effect_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "effect"
+        }
+      ]
+    },
+    "effect_param": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "named_param"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "effect"
+        }
+      ]
+    },
+    "named_param": {
+      "type": "PATTERN",
+      "value": "[^\"(]\\S*:"
     }
   },
   "extras": [

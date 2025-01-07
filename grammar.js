@@ -47,6 +47,7 @@ module.exports = grammar({
       $.quote,
       $.collection,
       $.tuple,
+      $.effect,
     ),
 
     string: $ => /"(\\\"|[^"])*"/,
@@ -139,7 +140,7 @@ module.exports = grammar({
       "}",
     ),
 
-    symbol: $ => /[^"]\S*/,
+    symbol: $ => /[^"("]\S*/,
     f: $ => "f",
     property_pair: $ => seq(
       ARRAY_START,
@@ -147,5 +148,21 @@ module.exports = grammar({
       $._top_level_form,
       ARRAY_END,
     ),
+
+    effect: $ => seq(
+      "(", 
+      field("input", optional($.inputs)),
+      "--", 
+      field("output", optional($.outputs)),
+      ")"
+    ),
+    inputs: $ => repeat1($._effect_item),
+    outputs: $ => repeat1($._effect_item),
+    _effect_item: $ => choice(
+      $.symbol,
+      $.effect,
+    ),
+    effect_param: $ => seq($.named_param, $.effect),
+    named_param: $ =>  /[^"(]\S*:/,
   },
 });
