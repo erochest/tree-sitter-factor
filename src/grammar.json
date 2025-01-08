@@ -31,6 +31,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "syntax"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
         },
         {
@@ -64,6 +68,19 @@
         {
           "type": "SYMBOL",
           "name": "symbol"
+        }
+      ]
+    },
+    "syntax": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "f"
+        },
+        {
+          "type": "STRING",
+          "value": "t"
         }
       ]
     },

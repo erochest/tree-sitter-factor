@@ -27,6 +27,12 @@ const ARRAY_END = "}"
 const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
 
+const SYNTAX = [
+  "f",
+  "t",
+]
+// const KERNEL = []
+
 module.exports = grammar({
   name: "factor",
 
@@ -41,6 +47,7 @@ module.exports = grammar({
     definition: $ => "definition_NOT_IMPLEMENTED",
 
     _top_level_form: $ => choice(
+      $.syntax,
       $.string,
       $.number,
       $.unary_postfix,
@@ -51,6 +58,8 @@ module.exports = grammar({
       $.parse_time,
       $.symbol,
     ),
+
+    syntax: $ => choice(...SYNTAX),
 
     string: $ => /"(\\\"|[^"])*"/,
 

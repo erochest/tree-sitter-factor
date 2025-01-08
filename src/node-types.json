@@ -36,6 +36,10 @@
           "named": true
         },
         {
+          "type": "syntax",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -173,6 +177,11 @@
     }
   },
   {
+    "type": "f",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "float",
     "named": true,
     "fields": {}
@@ -211,6 +220,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
           "named": true
         },
         {
@@ -383,6 +396,10 @@
           "named": true
         },
         {
+          "type": "syntax",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -435,6 +452,10 @@
           "named": true
         },
         {
+          "type": "syntax",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -479,6 +500,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
           "named": true
         },
         {
@@ -534,6 +559,10 @@
           "named": true
         },
         {
+          "type": "syntax",
+          "named": true
+        },
+        {
           "type": "tuple",
           "named": true
         },
@@ -546,6 +575,11 @@
   },
   {
     "type": "string_buffer",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "syntax",
     "named": true,
     "fields": {}
   },
@@ -591,6 +625,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
           "named": true
         },
         {
@@ -676,6 +714,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
           "named": true
         },
         {
@@ -787,7 +829,7 @@
   },
   {
     "type": "f",
-    "named": true
+    "named": false
   },
   {
     "type": "octcode",
@@ -804,6 +846,10 @@
   {
     "type": "symbol",
     "named": true
+  },
+  {
+    "type": "t",
+    "named": false
   },
   {
     "type": "word",
