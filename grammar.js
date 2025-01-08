@@ -48,6 +48,8 @@ module.exports = grammar({
       $.collection,
       $.tuple,
       $.effect,
+      $.parse_time,
+      $.symbol,
     ),
 
     string: $ => /"(\\\"|[^"])*"/,
@@ -140,7 +142,7 @@ module.exports = grammar({
       "}",
     ),
 
-    symbol: $ => /[^"("]\S*/,
+    symbol: $ => /[^"\s]\S*/,
     f: $ => "f",
     property_pair: $ => seq(
       ARRAY_START,
@@ -162,7 +164,7 @@ module.exports = grammar({
       $.symbol,
       $.effect,
     ),
-    effect_param: $ => seq($.named_param, $.effect),
-    named_param: $ =>  /[^"(]\S*:/,
+
+    parse_time: $ => seq("<<", repeat($._declaration), ">>"),
   },
 });

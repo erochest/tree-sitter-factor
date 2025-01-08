@@ -1,0 +1,16 @@
+
+====================
+Parse Time Evaluator
+====================
+
+<< 7 10 + >>
+
+---
+
+(source_file
+	(parse_time
+		(number (integer (base10)))
+		(number (integer (base10)))
+		(symbol))
+)
+

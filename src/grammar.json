@@ -56,6 +56,14 @@
         {
           "type": "SYMBOL",
           "name": "effect"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parse_time"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
         }
       ]
     },
@@ -587,7 +595,7 @@
     },
     "symbol": {
       "type": "PATTERN",
-      "value": "[^\"(\"]\\S*"
+      "value": "[^\"\\s]\\S*"
     },
     "f": {
       "type": "STRING",
@@ -690,22 +698,25 @@
         }
       ]
     },
-    "effect_param": {
+    "parse_time": {
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "named_param"
+          "type": "STRING",
+          "value": "<<"
         },
         {
-          "type": "SYMBOL",
-          "name": "effect"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_declaration"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ">>"
         }
       ]
-    },
-    "named_param": {
-      "type": "PATTERN",
-      "value": "[^\"(]\\S*:"
     }
   },
   "extras": [
