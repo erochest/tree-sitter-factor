@@ -24,6 +24,10 @@ const ID_HASHTABLE_START = "IH{"
 const VECTOR_START = "V{"
 const ARRAY_END = "}"
 
+const EFFECT_START = "("
+const EFFECT_SPLIT = "--"
+const EFFECT_END = ")"
+
 const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
 
@@ -161,11 +165,11 @@ module.exports = grammar({
     ),
 
     effect: $ => seq(
-      "(", 
+      EFFECT_START,
       field("input", optional($.inputs)),
-      "--", 
+      EFFECT_SPLIT,
       field("output", optional($.outputs)),
-      ")"
+      EFFECT_END,
     ),
     inputs: $ => repeat1($._effect_item),
     outputs: $ => repeat1($._effect_item),
