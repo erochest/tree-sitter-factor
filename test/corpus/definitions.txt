@@ -1,0 +1,21 @@
+
+================
+Word Definitions
+================
+
+: word ( input -- output ) some words here ;
+
+---
+
+(source_file
+	(definition
+		(colon)
+		(symbol)
+		(effect
+			(inputs (symbol))
+			(outputs (symbol)))
+		(symbol)
+		(symbol)
+		(symbol))
+)
+

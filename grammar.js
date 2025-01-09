@@ -31,6 +31,9 @@ const EFFECT_END = ")"
 const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
 
+const COLON = ":"
+const DEFINITION_END = ";"
+
 const SYNTAX = [
   "f",
   "t",
@@ -48,7 +51,19 @@ module.exports = grammar({
       $._top_level_form,
     ),
 
-    definition: $ => "definition_NOT_IMPLEMENTED",
+    definition: $ => seq(
+      $._definition_prefix,
+      $.symbol,
+      $.effect,
+      repeat($._top_level_form),
+      DEFINITION_END,
+    ),
+
+    _definition_prefix: $ => choice(
+      $.colon,
+    ),
+
+    colon: $ => COLON,
 
     _top_level_form: $ => choice(
       $.syntax,

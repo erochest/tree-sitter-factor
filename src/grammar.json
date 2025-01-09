@@ -23,8 +23,45 @@
       ]
     },
     "definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_definition_prefix"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "effect"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_top_level_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "_definition_prefix": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "colon"
+        }
+      ]
+    },
+    "colon": {
       "type": "STRING",
-      "value": "definition_NOT_IMPLEMENTED"
+      "value": ":"
     },
     "_top_level_form": {
       "type": "CHOICE",

@@ -151,6 +151,61 @@
     }
   },
   {
+    "type": "definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "colon",
+          "named": true
+        },
+        {
+          "type": "effect",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "effect",
     "named": true,
     "fields": {
@@ -744,6 +799,10 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
     "type": "<<",
     "named": false
   },
@@ -824,7 +883,7 @@
     "named": true
   },
   {
-    "type": "definition",
+    "type": "colon",
     "named": true
   },
   {
