@@ -1,0 +1,46 @@
+
+=========
+Fry Quote
+=========
+
+'[ a b c ]
+
+---
+
+(source_file
+	(fry_quote (symbol) (symbol) (symbol))
+)
+
+===========
+Fry Hashset
+===========
+
+TODO
+
+=============
+Fry Hashtable
+=============
+
+TODO
+
+=========
+Fry Array
+=========
+
+TODO
+
+================
+Fry Quote Splice
+================
+
+'[ @ ]
+[ even? ] '[ @ dup ] map
+
+---
+
+(source_file
+	(fry_quote (quote_splice))
+	(quote (symbol))
+	(fry_quote (quote_splice) (symbol))
+	(symbol)
+)

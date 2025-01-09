@@ -13,6 +13,7 @@ const UNARY_POSTFIX = [
 ]
 const CHAR_PREFIX = "CHAR:"
 const QUOTE_START = "["
+const FRY_QUOTE_START = "'["
 const QUOTE_END = "]"
 
 const ARRAY_START = "{"
@@ -27,6 +28,8 @@ const ARRAY_END = "}"
 const EFFECT_START = "("
 const EFFECT_SPLIT = "--"
 const EFFECT_END = ")"
+
+const FRY_QUOTE_SPLICE = "@"
 
 const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
@@ -72,9 +75,23 @@ module.exports = grammar({
     colon: $ => COLON,
     colon_colon: $ => COLON_COLON,
 
+    _word_form: $ => choice(
+      $.syntax,
+      $.string,
+      $.number,
+      $.unary_postfix,
+      $.quote,
+      $.fry_quote,
+      $.collection,
+      $.tuple,
+      $.effect,
+      $.parse_time,
+      $.symbol,
+    ),
+
     _in_definition_form: $ => choice(
       $.var_binding,
-      $._top_level_form,
+      $._word_form,
     ),
 
     var_binding: $ => seq(
@@ -86,17 +103,8 @@ module.exports = grammar({
     ),
 
     _top_level_form: $ => choice(
-      $.syntax,
       $.private_block,
-      $.string,
-      $.number,
-      $.unary_postfix,
-      $.quote,
-      $.collection,
-      $.tuple,
-      $.effect,
-      $.parse_time,
-      $.symbol,
+      $._word_form,
     ),
 
     syntax: $ => choice(...SYNTAX),
@@ -161,7 +169,17 @@ module.exports = grammar({
     unicode_name: $ => seq(/\\[uU]\{/, /[^}]+/, "}"),
     octcode: $ => /\\[0-7]{1,3}/,
 
-    quote: $ => seq(QUOTE_START, repeat($._top_level_form), QUOTE_END),
+    quote: $ => seq(QUOTE_START, repeat($._quote_body_form), QUOTE_END),
+    _quote_body_form: $ => choice(
+      $._word_form,
+    ),
+
+    fry_quote: $ => seq(FRY_QUOTE_START, repeat($._fry_form), QUOTE_END),
+    _fry_form: $ => choice(
+      $._word_form,
+      $.quote_splice,
+    ),
+    quote_splice: $ => FRY_QUOTE_SPLICE,
 
     collection: $ => choice(
       $.array,

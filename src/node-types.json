@@ -16,6 +16,10 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -179,15 +183,15 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
         {
           "type": "parse_time",
-          "named": true
-        },
-        {
-          "type": "private_block",
           "named": true
         },
         {
@@ -258,6 +262,65 @@
     "fields": {}
   },
   {
+    "type": "fry_quote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "effect",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "quote_splice",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "hashset",
     "named": true,
     "fields": {},
@@ -271,6 +334,10 @@
         },
         {
           "type": "effect",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
           "named": true
         },
         {
@@ -451,6 +518,10 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -515,6 +586,10 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -567,6 +642,10 @@
         },
         {
           "type": "effect",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
           "named": true
         },
         {
@@ -625,15 +704,15 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
         {
           "type": "parse_time",
-          "named": true
-        },
-        {
-          "type": "private_block",
           "named": true
         },
         {
@@ -682,6 +761,10 @@
         },
         {
           "type": "effect",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
           "named": true
         },
         {
@@ -751,6 +834,10 @@
         },
         {
           "type": "f",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
           "named": true
         },
         {
@@ -866,6 +953,10 @@
           "named": true
         },
         {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -903,6 +994,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "'[",
+    "named": false
   },
   {
     "type": "(",
@@ -1026,6 +1121,10 @@
   },
   {
     "type": "octcode",
+    "named": true
+  },
+  {
+    "type": "quote_splice",
     "named": true
   },
   {

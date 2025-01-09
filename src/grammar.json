@@ -71,6 +71,55 @@
       "type": "STRING",
       "value": "::"
     },
+    "_word_form": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "syntax"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unary_postfix"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "quote"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fry_quote"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "collection"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tuple"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "effect"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parse_time"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        }
+      ]
+    },
     "_in_definition_form": {
       "type": "CHOICE",
       "members": [
@@ -80,7 +129,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_top_level_form"
+          "name": "_word_form"
         }
       ]
     },
@@ -127,47 +176,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "syntax"
-        },
-        {
-          "type": "SYMBOL",
           "name": "private_block"
         },
         {
           "type": "SYMBOL",
-          "name": "string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unary_postfix"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "quote"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "collection"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "tuple"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "effect"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "parse_time"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "symbol"
+          "name": "_word_form"
         }
       ]
     },
@@ -460,7 +473,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_top_level_form"
+            "name": "_quote_body_form"
           }
         },
         {
@@ -468,6 +481,52 @@
           "value": "]"
         }
       ]
+    },
+    "_quote_body_form": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_word_form"
+        }
+      ]
+    },
+    "fry_quote": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'["
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_fry_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
+    "_fry_form": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_word_form"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "quote_splice"
+        }
+      ]
+    },
+    "quote_splice": {
+      "type": "STRING",
+      "value": "@"
     },
     "collection": {
       "type": "CHOICE",
