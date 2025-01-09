@@ -56,12 +56,20 @@
         {
           "type": "SYMBOL",
           "name": "colon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "colon_colon"
         }
       ]
     },
     "colon": {
       "type": "STRING",
       "value": ":"
+    },
+    "colon_colon": {
+      "type": "STRING",
+      "value": "::"
     },
     "_top_level_form": {
       "type": "CHOICE",

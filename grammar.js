@@ -32,6 +32,7 @@ const PATHNAME_START = "P\""
 const STRING_BUFFER_START = "SBUF\""
 
 const COLON = ":"
+const COLON_COLON = "::"
 const DEFINITION_END = ";"
 
 const SYNTAX = [
@@ -61,9 +62,11 @@ module.exports = grammar({
 
     _definition_prefix: $ => choice(
       $.colon,
+      $.colon_colon,
     ),
 
     colon: $ => COLON,
+    colon_colon: $ => COLON_COLON,
 
     _top_level_form: $ => choice(
       $.syntax,

@@ -19,3 +19,25 @@ Word Definitions
 		(symbol))
 )
 
+=========================
+Variable Word Definitions
+=========================
+
+:: word ( var1 var2 -- output )
+	do
+	something
+	42 ;
+
+---
+
+(source_file
+	(definition
+		(colon_colon)
+		(symbol)
+		(effect
+			(inputs (symbol) (symbol))
+			(outputs (symbol)))
+		(symbol)
+		(symbol)
+		(number (integer (base10))))
+)
