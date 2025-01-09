@@ -9,3 +9,25 @@ f t
 
 (source_file (syntax) (syntax))
 
+================
+Variable Binding
+================
+
+:: name ( -- )
+	:> a
+	:> b!
+	:> c
+	:> ( f e! d ) ;
+
+---
+
+(source_file
+	(definition
+		(colon_colon)
+		(symbol)
+		(effect)
+		(var_binding (symbol))
+		(var_binding (symbol))
+		(var_binding (symbol))
+		(var_binding (symbol) (symbol) (symbol)))
+)

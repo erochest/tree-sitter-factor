@@ -41,7 +41,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_top_level_form"
+            "name": "_in_definition_form"
           }
         },
         {
@@ -70,6 +70,57 @@
     "colon_colon": {
       "type": "STRING",
       "value": "::"
+    },
+    "_in_definition_form": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "var_binding"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_top_level_form"
+        }
+      ]
+    },
+    "var_binding": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":>"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "symbol"
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "symbol"
+                  }
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     "_top_level_form": {
       "type": "CHOICE",

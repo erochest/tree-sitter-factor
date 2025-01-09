@@ -34,6 +34,7 @@ const STRING_BUFFER_START = "SBUF\""
 const COLON = ":"
 const COLON_COLON = "::"
 const DEFINITION_END = ";"
+const VAR_BINDING = ":>"
 
 const SYNTAX = [
   "f",
@@ -56,7 +57,7 @@ module.exports = grammar({
       $._definition_prefix,
       $.symbol,
       $.effect,
-      repeat($._top_level_form),
+      repeat($._in_definition_form),
       DEFINITION_END,
     ),
 
@@ -67,6 +68,19 @@ module.exports = grammar({
 
     colon: $ => COLON,
     colon_colon: $ => COLON_COLON,
+
+    _in_definition_form: $ => choice(
+      $.var_binding,
+      $._top_level_form,
+    ),
+
+    var_binding: $ => seq(
+      VAR_BINDING,
+      choice(
+        $.symbol,
+        seq(EFFECT_START, repeat1($.symbol), EFFECT_END),
+      ),
+    ),
 
     _top_level_form: $ => choice(
       $.syntax,
