@@ -36,6 +36,9 @@ const COLON_COLON = "::"
 const DEFINITION_END = ";"
 const VAR_BINDING = ":>"
 
+const PRIVATE_START = "<PRIVATE"
+const PRIVATE_END = "PRIVATE>"
+
 const SYNTAX = [
   "f",
   "t",
@@ -84,6 +87,7 @@ module.exports = grammar({
 
     _top_level_form: $ => choice(
       $.syntax,
+      $.private_block,
       $.string,
       $.number,
       $.unary_postfix,
@@ -96,6 +100,12 @@ module.exports = grammar({
     ),
 
     syntax: $ => choice(...SYNTAX),
+
+    private_block: $ => seq(
+      PRIVATE_START,
+      repeat($._declaration),
+      PRIVATE_END,
+    ),
 
     string: $ => /"(\\\"|[^"])*"/,
 

@@ -1,4 +1,3 @@
-
 ========
 Booleans
 ========
@@ -7,7 +6,9 @@ f t
 
 ---
 
-(source_file (syntax) (syntax))
+(source_file
+  (syntax)
+  (syntax))
 
 ================
 Variable Binding
@@ -22,12 +23,35 @@ Variable Binding
 ---
 
 (source_file
-	(definition
-		(colon_colon)
-		(symbol)
-		(effect)
-		(var_binding (symbol))
-		(var_binding (symbol))
-		(var_binding (symbol))
-		(var_binding (symbol) (symbol) (symbol)))
-)
+  (definition
+    (colon_colon)
+    (symbol)
+    (effect)
+    (var_binding
+      (symbol))
+    (var_binding
+      (symbol))
+    (var_binding
+      (symbol))
+    (var_binding
+      (symbol)
+      (symbol)
+      (symbol))))
+
+=======
+Private
+=======
+
+code
+
+<PRIVATE
+more code
+PRIVATE>
+
+---
+
+(source_file
+  (symbol)
+  (private_block
+    (symbol)
+    (symbol)))

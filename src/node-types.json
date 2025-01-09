@@ -24,6 +24,10 @@
           "named": true
         },
         {
+          "type": "private_block",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -183,6 +187,10 @@
           "named": true
         },
         {
+          "type": "private_block",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -271,6 +279,10 @@
         },
         {
           "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
           "named": true
         },
         {
@@ -447,6 +459,10 @@
           "named": true
         },
         {
+          "type": "private_block",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -479,6 +495,65 @@
     "fields": {}
   },
   {
+    "type": "private_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "definition",
+          "named": true
+        },
+        {
+          "type": "effect",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_pair",
     "named": true,
     "fields": {},
@@ -500,6 +575,10 @@
         },
         {
           "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
           "named": true
         },
         {
@@ -551,6 +630,10 @@
         },
         {
           "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
           "named": true
         },
         {
@@ -607,6 +690,10 @@
         },
         {
           "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
           "named": true
         },
         {
@@ -672,6 +759,10 @@
         },
         {
           "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "private_block",
           "named": true
         },
         {
@@ -783,6 +874,10 @@
           "named": true
         },
         {
+          "type": "private_block",
+          "named": true
+        },
+        {
           "type": "quote",
           "named": true
         },
@@ -834,6 +929,10 @@
     "named": false
   },
   {
+    "type": "<PRIVATE",
+    "named": false
+  },
+  {
     "type": ">>",
     "named": false
   },
@@ -867,6 +966,10 @@
   },
   {
     "type": "POSTPONE:",
+    "named": false
+  },
+  {
+    "type": "PRIVATE>",
     "named": false
   },
   {

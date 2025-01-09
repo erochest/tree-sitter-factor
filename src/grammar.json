@@ -131,6 +131,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "private_block"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
         },
         {
@@ -177,6 +181,26 @@
         {
           "type": "STRING",
           "value": "t"
+        }
+      ]
+    },
+    "private_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<PRIVATE"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_declaration"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "PRIVATE>"
         }
       ]
     },
