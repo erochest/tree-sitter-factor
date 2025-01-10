@@ -117,6 +117,10 @@
           "named": true
         },
         {
+          "type": "fry_array",
+          "named": true
+        },
+        {
           "type": "fry_hashset",
           "named": true
         },
@@ -268,6 +272,65 @@
     "type": "float",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "fry_array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "effect",
+          "named": true
+        },
+        {
+          "type": "fry_quote",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parse_time",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "quote_splice",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "syntax",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "fry_hashset",
@@ -1091,6 +1154,10 @@
   },
   {
     "type": "'[",
+    "named": false
+  },
+  {
+    "type": "'{",
     "named": false
   },
   {

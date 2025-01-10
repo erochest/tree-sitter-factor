@@ -45,9 +45,17 @@ Fry Hashtable
 Fry Array
 =========
 
-TODO
+'{ 7 "seven" 0x7 }
 
-'{ }
+---
+
+(source_file
+	(collection
+		(fry_array
+			(number (integer (base10)))
+			(string)
+			(number (integer (base16)))))
+)
 
 ================
 Fry Quote Splice

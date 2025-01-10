@@ -17,6 +17,7 @@ const FRY_QUOTE_START = "'["
 const QUOTE_END = "]"
 
 const ARRAY_START = "{"
+const FRY_ARRAY_START = "'{"
 const BYTE_ARRAY_START = "B{"
 const COMPLEX_START = "C{"
 const HASHSET_START = "HS{"
@@ -186,6 +187,7 @@ module.exports = grammar({
 
     collection: $ => choice(
       $.array,
+      $.fry_array,
       $.byte_array,
       $.complex,
       $.hashset,
@@ -199,6 +201,7 @@ module.exports = grammar({
     ),
 
     array: $ => seq(ARRAY_START, repeat($._top_level_form), ARRAY_END),
+    fry_array: $ => seq(FRY_ARRAY_START, repeat($._fry_form), ARRAY_END),
     byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
     hashset: $ => seq(HASHSET_START, repeat($._top_level_form), ARRAY_END),
