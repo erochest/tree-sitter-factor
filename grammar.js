@@ -20,6 +20,7 @@ const ARRAY_START = "{"
 const BYTE_ARRAY_START = "B{"
 const COMPLEX_START = "C{"
 const HASHSET_START = "HS{"
+const FRY_HASHSET_START = "'HS{"
 const HASHTABLE_START = "H{"
 const ID_HASHTABLE_START = "IH{"
 const VECTOR_START = "V{"
@@ -186,6 +187,7 @@ module.exports = grammar({
       $.byte_array,
       $.complex,
       $.hashset,
+      $.fry_hashset,
       $.hashtable,
       $.id_hashtable,
       $.pathname,
@@ -197,6 +199,7 @@ module.exports = grammar({
     byte_array: $ => seq(BYTE_ARRAY_START, repeat($.integer), ARRAY_END),
     complex: $ => seq(COMPLEX_START, $.number, $.number, ARRAY_END),
     hashset: $ => seq(HASHSET_START, repeat($._top_level_form), ARRAY_END),
+    fry_hashset: $ => seq(FRY_HASHSET_START, repeat($._fry_form), ARRAY_END),
     hashtable: $ => seq(HASHTABLE_START, repeat($.array), ARRAY_END),
     id_hashtable: $ => seq(ID_HASHTABLE_START, repeat($.array), ARRAY_END),
     pathname: $ => seq(PATHNAME_START, /(\\\"|[^"])*"/),

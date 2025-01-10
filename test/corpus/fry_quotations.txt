@@ -15,7 +15,16 @@ Fry Quote
 Fry Hashset
 ===========
 
-TODO
+'HS{ 7 8 }
+
+---
+
+(source_file
+	(collection
+		(fry_hashset
+			(number (integer (base10)))
+			(number (integer (base10)))))
+)
 
 =============
 Fry Hashtable
@@ -23,11 +32,15 @@ Fry Hashtable
 
 TODO
 
+'H{ }
+
 =========
 Fry Array
 =========
 
 TODO
+
+'{ }
 
 ================
 Fry Quote Splice

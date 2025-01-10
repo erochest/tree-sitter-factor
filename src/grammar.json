@@ -549,6 +549,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "fry_hashset"
+        },
+        {
+          "type": "SYMBOL",
           "name": "hashtable"
         },
         {
@@ -642,6 +646,26 @@
           "content": {
             "type": "SYMBOL",
             "name": "_top_level_form"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "fry_hashset": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'HS{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_fry_form"
           }
         },
         {
