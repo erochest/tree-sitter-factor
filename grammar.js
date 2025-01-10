@@ -22,6 +22,7 @@ const COMPLEX_START = "C{"
 const HASHSET_START = "HS{"
 const FRY_HASHSET_START = "'HS{"
 const HASHTABLE_START = "H{"
+const FRY_HASHTABLE_START = "'H{"
 const ID_HASHTABLE_START = "IH{"
 const VECTOR_START = "V{"
 const ARRAY_END = "}"
@@ -178,8 +179,9 @@ module.exports = grammar({
     fry_quote: $ => seq(FRY_QUOTE_START, repeat($._fry_form), QUOTE_END),
     _fry_form: $ => choice(
       $._word_form,
-      $.quote_splice,
+      $._fry,
     ),
+    _fry: $ => choice($.quote_splice),
     quote_splice: $ => FRY_QUOTE_SPLICE,
 
     collection: $ => choice(
@@ -189,6 +191,7 @@ module.exports = grammar({
       $.hashset,
       $.fry_hashset,
       $.hashtable,
+      $.fry_hashtable,
       $.id_hashtable,
       $.pathname,
       $.string_buffer,
@@ -201,6 +204,11 @@ module.exports = grammar({
     hashset: $ => seq(HASHSET_START, repeat($._top_level_form), ARRAY_END),
     fry_hashset: $ => seq(FRY_HASHSET_START, repeat($._fry_form), ARRAY_END),
     hashtable: $ => seq(HASHTABLE_START, repeat($.array), ARRAY_END),
+    fry_hashtable: $ => seq(
+      FRY_HASHTABLE_START,
+      repeat(choice($._fry, $.array)),
+      ARRAY_END,
+    ),
     id_hashtable: $ => seq(ID_HASHTABLE_START, repeat($.array), ARRAY_END),
     pathname: $ => seq(PATHNAME_START, /(\\\"|[^"])*"/),
     string_buffer: $ => seq(STRING_BUFFER_START, /(\\\"|[^"])*"/),

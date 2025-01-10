@@ -30,9 +30,16 @@ Fry Hashset
 Fry Hashtable
 =============
 
-TODO
+'H{ { 7 "seven" } { 8 "eight" } }
 
-'H{ }
+---
+
+(source_file
+	(collection
+		(fry_hashtable
+			(array (number (integer (base10))) (string))
+			(array (number (integer (base10))) (string))))
+)
 
 =========
 Fry Array

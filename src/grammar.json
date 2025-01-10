@@ -520,6 +520,15 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_fry"
+        }
+      ]
+    },
+    "_fry": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
           "name": "quote_splice"
         }
       ]
@@ -554,6 +563,10 @@
         {
           "type": "SYMBOL",
           "name": "hashtable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fry_hashtable"
         },
         {
           "type": "SYMBOL",
@@ -686,6 +699,35 @@
           "content": {
             "type": "SYMBOL",
             "name": "array"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "fry_hashtable": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'H{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_fry"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "array"
+              }
+            ]
           }
         },
         {

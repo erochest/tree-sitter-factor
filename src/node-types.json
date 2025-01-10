@@ -121,6 +121,10 @@
           "named": true
         },
         {
+          "type": "fry_hashtable",
+          "named": true
+        },
+        {
           "type": "hashset",
           "named": true
         },
@@ -319,6 +323,25 @@
         },
         {
           "type": "unary_postfix",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fry_hashtable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "quote_splice",
           "named": true
         }
       ]
@@ -1060,6 +1083,10 @@
   },
   {
     "type": "'HS{",
+    "named": false
+  },
+  {
+    "type": "'H{",
     "named": false
   },
   {
