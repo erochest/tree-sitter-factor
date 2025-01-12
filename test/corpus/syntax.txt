@@ -55,3 +55,14 @@ PRIVATE>
   (private_block
     (symbol)
     (symbol)))
+
+=====
+Alias
+=====
+
+ALIAS: new-word existing-word
+
+---
+
+(source_file
+  (alias (symbol) (symbol)))

@@ -180,6 +180,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "alias"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_word_form"
         }
       ]
@@ -214,6 +218,23 @@
         {
           "type": "STRING",
           "value": "PRIVATE>"
+        }
+      ]
+    },
+    "alias": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ALIAS:"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
         }
       ]
     },

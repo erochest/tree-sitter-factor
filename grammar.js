@@ -45,6 +45,8 @@ const VAR_BINDING = ":>"
 const PRIVATE_START = "<PRIVATE"
 const PRIVATE_END = "PRIVATE>"
 
+const ALIAS = "ALIAS:"
+
 const SYNTAX = [
   "f",
   "t",
@@ -107,6 +109,7 @@ module.exports = grammar({
 
     _top_level_form: $ => choice(
       $.private_block,
+      $.alias,
       $._word_form,
     ),
 
@@ -117,6 +120,8 @@ module.exports = grammar({
       repeat($._declaration),
       PRIVATE_END,
     ),
+
+    alias: $ => seq(ALIAS, $.symbol, $.symbol),
 
     string: $ => /"(\\\"|[^"])*"/,
 

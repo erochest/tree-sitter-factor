@@ -1,5 +1,20 @@
 [
   {
+    "type": "alias",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "array",
     "named": true,
     "fields": {},
@@ -7,6 +22,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "alias",
+          "named": true
+        },
         {
           "type": "collection",
           "named": true
@@ -478,6 +497,10 @@
       "required": false,
       "types": [
         {
+          "type": "alias",
+          "named": true
+        },
+        {
           "type": "collection",
           "named": true
         },
@@ -655,6 +678,10 @@
       "required": false,
       "types": [
         {
+          "type": "alias",
+          "named": true
+        },
+        {
           "type": "collection",
           "named": true
         },
@@ -723,6 +750,10 @@
       "required": false,
       "types": [
         {
+          "type": "alias",
+          "named": true
+        },
+        {
           "type": "collection",
           "named": true
         },
@@ -785,6 +816,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "alias",
+          "named": true
+        },
         {
           "type": "collection",
           "named": true
@@ -901,6 +936,10 @@
       "required": false,
       "types": [
         {
+          "type": "alias",
+          "named": true
+        },
+        {
           "type": "collection",
           "named": true
         },
@@ -973,6 +1012,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "alias",
+          "named": true
+        },
         {
           "type": "collection",
           "named": true
@@ -1094,6 +1137,10 @@
       "required": false,
       "types": [
         {
+          "type": "alias",
+          "named": true
+        },
+        {
           "type": "collection",
           "named": true
         },
@@ -1190,6 +1237,10 @@
   },
   {
     "type": ">>",
+    "named": false
+  },
+  {
+    "type": "ALIAS:",
     "named": false
   },
   {
